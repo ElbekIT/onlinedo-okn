@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tovar tafsilotlari - ShopUZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +998 90 123 45 67</span>
+                        <span><i class="fas fa-envelope"></i> info@shop.uz</span>
+                    </div>
+                    <div class="user-info">
+                        <span id="user-greeting"></span>
+                        <button id="account-btn" class="account-btn">
+                            <i class="fas fa-user"></i> Akkaunt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="logo" onclick="window.location.href='index.html'">ShopUZ</h1>
+                    
+                    <nav class="nav">
+                        <a href="index.html" class="nav-btn">Bosh sahifa</a>
+                        <a href="yoqtirganlar.html" class="nav-btn">Yoqtirganlar</a>
+                        <a href="savatcha.html" class="nav-btn">Savatcha</a>
+                    </nav>
+
+                    <div class="header-actions">
+                        <button onclick="window.location.href='yoqtirganlar.html'" class="action-btn">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </button>
+
+                        <button onclick="window.location.href='savatcha.html'" class="action-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb">
+                <a href="index.html">Bosh sahifa</a>
+                <span>/</span>
+                <span id="product-category">Kategoriya</span>
+                <span>/</span>
+                <span id="product-name-breadcrumb">Mahsulot</span>
+            </nav>
+
+            <div class="product-detail">
+                <div class="product-images">
+                    <div class="main-image">
+                        <img id="main-product-image" src="/placeholder.svg" alt="Mahsulot rasmi">
+                        <button id="wishlist-btn-detail" class="wishlist-btn-detail">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="product-info-detail">
+                    <div class="product-badges-detail" id="product-badges-detail">
+                        <!-- Badges will be added here -->
+                    </div>
+
+                    <h1 id="product-name-detail">Mahsulot nomi</h1>
+                    
+                    <div class="product-rating-detail">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="rating-text">(4.8) • 127 ta sharh</span>
+                    </div>
+
+                    <div class="product-price-detail">
+                        <span id="current-price-detail" class="current-price">$0.00</span>
+                        <span id="original-price-detail" class="original-price" style="display: none;">$0.00</span>
+                        <span id="discount-badge-detail" class="discount-badge" style="display: none;">-0%</span>
+                    </div>
+
+                    <div class="product-likes-detail">
+                        <button id="like-btn-detail" class="like-btn-detail">
+                            <i class="fas fa-heart"></i>
+                            <span id="likes-count-detail">0</span> ta yoqtirish
+                        </button>
+                    </div>
+
+                    <div class="product-description">
+                        <h3>Mahsulot haqida</h3>
+                        <p id="product-description-text">
+                            Bu mahsulot yuqori sifatli materiallardan tayyorlangan va zamonaviy texnologiyalar yordamida ishlab chiqarilgan. 
+                            Uzoq muddat xizmat qiladi va foydalanishda qulay.
+                        </p>
+                    </div>
+
+                    <div class="product-features">
+                        <h3>Xususiyatlari</h3>
+                        <ul id="product-features-list">
+                            <li>Yuqori sifat</li>
+                            <li>Zamonaviy dizayn</li>
+                            <li>Uzoq muddat xizmat</li>
+                            <li>Qulay foydalanish</li>
+                        </ul>
+                    </div>
+
+                    <div class="quantity-selector">
+                        <label>Miqdor:</label>
+                        <div class="quantity-controls-detail">
+                            <button id="decrease-qty" class="qty-btn">
+                                <i class="fas fa-minus"></i>
+                            </button>
+                            <span id="quantity-display">1</span>
+                            <button id="increase-qty" class="qty-btn">
+                                <i class="fas fa-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="product-actions-detail">
+                        <button id="add-to-cart-detail" class="btn btn-primary btn-large">
+                            <i class="fas fa-shopping-cart"></i>
+                            Savatchaga qo'shish
+                        </button>
+                        <button id="buy-now-detail" class="btn btn-success btn-large">
+                            <i class="fas fa-bolt"></i>
+                            Hoziroq sotib olish
+                        </button>
+                    </div>
+
+                    <div class="delivery-info">
+                        <div class="delivery-item">
+                            <i class="fas fa-truck"></i>
+                            <div>
+                                <strong>Bepul yetkazib berish</strong>
+                                <p>50$ dan yuqori xaridlarda</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <i class="fas fa-undo"></i>
+                            <div>
+                                <strong>30 kun qaytarish</strong>
+                                <p>Sababsiz qaytarish imkoniyati</p>
+                            </div>
+                        </div>
+                        <div class="delivery-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <strong>Kafolat</strong>
+                                <p>1 yillik rasmiy kafolat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Related Products -->
+            <section class="related-products">
+                <h2>O'xshash mahsulotlar</h2>
+                <div id="related-products-grid" class="products-grid">
+                    <!-- Related products will be loaded here -->
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopUZ</h3>
+                    <p>Eng sifatli mahsulotlar va professional xizmat</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopUZ. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="user-modal-title">Ro'yxatdan o'tish</h2>
+                <button class="close-btn" id="close-user-modal" type="button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="user-name"><i class="fas fa-user"></i> Ismingiz</label>
+                        <input type="text" id="user-name" placeholder="Ismingizni kiriting" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-phone"><i class="fas fa-phone"></i> Telefon</label>
+                        <input type="tel" id="user-phone" placeholder="+998 90 123 45 67" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="save-user-btn">Saqlash</button>
+                        <button type="button" class="btn btn-danger" id="delete-account-btn" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="tovar.js"></script>
+</body>
+</html>

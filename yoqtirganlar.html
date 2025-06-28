@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yoqtirganlar - ShopUZ</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <div class="top-bar-content">
+                    <div class="contact-info">
+                        <span><i class="fas fa-phone"></i> +998 90 123 45 67</span>
+                        <span><i class="fas fa-envelope"></i> info@shop.uz</span>
+                    </div>
+                    <div class="user-info">
+                        <span id="user-greeting"></span>
+                        <button id="account-btn" class="account-btn">
+                            <i class="fas fa-user"></i> Akkaunt
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-header">
+            <div class="container">
+                <div class="header-content">
+                    <h1 class="logo" onclick="window.location.href='index.html'">ShopUZ</h1>
+                    
+                    <nav class="nav">
+                        <a href="index.html" class="nav-btn">Bosh sahifa</a>
+                        <a href="yoqtirganlar.html" class="nav-btn active">Yoqtirganlar</a>
+                        <a href="savatcha.html" class="nav-btn">Savatcha</a>
+                    </nav>
+
+                    <div class="header-actions">
+                        <button onclick="window.location.href='yoqtirganlar.html'" class="action-btn">
+                            <i class="fas fa-heart"></i>
+                            <span class="badge" id="wishlist-count">0</span>
+                        </button>
+
+                        <button onclick="window.location.href='savatcha.html'" class="action-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="badge" id="cart-count">0</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-heart"></i> Yoqtirganlar</h1>
+                <p>Sizga yoqqan mahsulotlar</p>
+            </div>
+
+            <div class="wishlist-page">
+                <div id="wishlist-items-container" class="products-grid">
+                    <!-- Wishlist items will be loaded here -->
+                </div>
+
+                <div id="empty-wishlist-message" class="empty-state" style="display: none;">
+                    <i class="fas fa-heart"></i>
+                    <h3>Yoqtirganlar bo'sh</h3>
+                    <p>Hozircha hech qanday mahsulotni yoqtirmadingiz</p>
+                    <a href="index.html" class="btn btn-primary">Mahsulotlarni ko'rish</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>ShopUZ</h3>
+                    <p>Eng sifatli mahsulotlar va professional xizmat</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ShopUZ. Barcha huquqlar himoyalangan.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- User Modal -->
+    <div id="user-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="user-modal-title">Ro'yxatdan o'tish</h2>
+                <button class="close-btn" id="close-user-modal" type="button">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="user-form">
+                    <div class="form-group">
+                        <label for="user-name"><i class="fas fa-user"></i> Ismingiz</label>
+                        <input type="text" id="user-name" placeholder="Ismingizni kiriting" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="user-phone"><i class="fas fa-phone"></i> Telefon</label>
+                        <input type="tel" id="user-phone" placeholder="+998 90 123 45 67" required>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary" id="save-user-btn">Saqlash</button>
+                        <button type="button" class="btn btn-danger" id="delete-account-btn" style="display: none;">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading -->
+    <div id="loading" class="loading" style="display: none;">
+        <div class="spinner"></div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="yoqtirganlar.js"></script>
+</body>
+</html>
